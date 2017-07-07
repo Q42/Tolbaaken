@@ -9,7 +9,7 @@ Building a log-message could potentially be a expensive operation, especially if
 
     Tolbaaken.info { "Log some object: $object" }
     
-With Tolbaaken the log-message is computed inside a lambda which is not executed when logging is disabled. Tolbaakens log method are inlined, so there is no overhead of creating a anonymous inner class.
+With Tolbaaken the log-message is computed inside a lambda which is not executed when logging is disabled. Tolbaakens log methods are inlined, so there is no overhead of creating a anonymous inner class.
 
 ## Usage
 In your application do the following to enable logging for debug builds:

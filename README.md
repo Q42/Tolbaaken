@@ -12,13 +12,13 @@ Building a log-message could potentially be a expensive operation, especially if
 With Tolbaaken the log-message is computed inside a lambda which is not executed when logging is disabled. Tolbaakens log method are inlined, so there is no overhead of creating a anonymous inner class.
 
 ## Usage
-In your application do the follwoing to enable logging for debug builds:
+In your application do the following to enable logging for debug builds:
 
     if (BuildConfig.DEBUG) {
       Tolbaaken.logger = AndroidTolbaakenLogger
     }
     
-Some debug examples:
+Some logging examples:
 
     Tolbaaken.debug { "This is a debug message" }
     Tolbaaken.info(tag = "CustomTag") { "This is a info message" }

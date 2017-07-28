@@ -68,9 +68,7 @@ interface TolbaakenLogger {
 object AndroidTolbaakenLogger : TolbaakenLogger {
     override fun log(level: TolbaakenLogLevel, tag: String, message: String, throwable: Throwable?) {
         val androidLogPriority = level.androidLogPriority
-        if (Log.isLoggable(tag, androidLogPriority)) {
-            Log.println(androidLogPriority, tag, formatMessage(message, throwable))
-        }
+        Log.println(androidLogPriority, tag, formatMessage(message, throwable))
     }
 
     private val TolbaakenLogLevel.androidLogPriority get() = when (this) {

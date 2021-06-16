@@ -72,5 +72,14 @@ Sometimes you want custom log handling, for example logging Exceptions to some c
         }
     }
     
+## Android Studio Live templates
+
+To use the Tolbaaken live templates, put [the Tolbaaken live template file](./templates/Kotlin-Tolbaaken-Log) at the correct live templates location. At the time of writing this location is on MacOS:
+`~/Library/Application Support/Google/AndroidStudio<version>/templates`
+
+Check out the live templates to see what they do. For example, `tolme` generates code that logs the current method and the params it was called with. In a Fragment's onCreateView, `tolme` would generate this code:
+
+    Tolbaaken.debug { "onCreateView() called with: inflater = [$inflater], container = [$container], savedInstanceState = [$savedInstanceState]" }
+
 ## Library name
 This library's name is inspired by the lighthouse on the island [Kotlin](https://www.wikiwand.com/en/Kotlin_Island) which is named "Tolbaaken". 

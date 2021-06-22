@@ -1,0 +1,30 @@
+<templateSet group="Kotlin-Tolbaaken-Log">
+  <template name="told" value="com.q42.tolbaaken.Tolbaaken.debug { &quot;$END$&quot; }" description="Tolbaaken debug" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="tolw" value="com.q42.tolbaaken.Tolbaaken.warn { &quot;$END$&quot; }" description="Tolbaaken warn" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="tole" value="com.q42.tolbaaken.Tolbaaken.error($ERROR$) { &quot;$CONTENTS$&quot; }" description="Tolbaaken error" toReformat="false" toShortenFQNames="true">
+    <variable name="ERROR" expression="kotlinVariable()" defaultValue="e" alwaysStopAt="true" />
+    <variable name="CONTENTS" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="toli" value="com.q42.tolbaaken.Tolbaaken.info { &quot;$END$&quot; }" description="Tolbaaken info" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="tolme" value="com.q42.tolbaaken.Tolbaaken.debug { $CONTENT$ }&#10;" description="Tolbaaken debug current method info" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTENT" expression="groovyScript(&quot;def params = _2.collect {it + ' = [\$' + it + ']'}.join(', ');return '\&quot;' + _1 + '() called' + (params.empty  ? '' : ' with: ' + params) + '\&quot;'&quot;, kotlinFunctionName(), functionParameters())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
